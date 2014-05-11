@@ -10,7 +10,7 @@ object Build extends SbtBuild {
   val sharedSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.monifu",
     version := "0.7.1",
-    scalaVersion := "2.10.4",
+    scalaVersion := "2.11.0",
     crossScalaVersions := Seq("2.10.4", "2.11.0"),
 
     initialize := {
@@ -26,7 +26,7 @@ object Build extends SbtBuild {
     scalacOptions ++= Seq(
       "-unchecked", "-deprecation", "-feature", "-Xlint", "-target:jvm-1.6", "-Yinline-warnings",
       "-optimise", "-Ywarn-adapted-args", "-Ywarn-dead-code", "-Ywarn-inaccessible",
-      "-Ywarn-nullary-override", "-Ywarn-nullary-unit"
+      "-Ywarn-nullary-override", "-Ywarn-nullary-unit", "-Ydelambdafy:method"
     ),
 
     resolvers ++= Seq(
